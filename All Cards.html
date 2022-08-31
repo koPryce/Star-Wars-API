@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Cards Desktop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header id="menu">
+        <section class="cards-deck">
+            <section class="allcards">
+                <img src="Interview Assets/Card.svg" alt="All Cards Image" class="card_img">
+                <h5 class="ctext">All Cards</h5>
+            </section>
+
+            <section class="decks">
+                <img src="Interview Assets/Deck.svg" alt="Deck Image" class="deck_img">
+                <h5 class="dtext">Decks</h5>
+            </section>
+        </section>
+
+        <section id="title">
+            <h3>SW-API DECK BUILDER</h3>
+        </section>
+
+        <section id="name">
+            <h4>Guest User</h4>
+        </section>
+    </header>
+    <hr>
+
+    <main id="main">
+        <p id="selection"><a href="#" >All Cards</a> > Select a card </p>
+        <section id="nav">
+            <form action="" class="search">
+                <img src="Interview Assets/Search.svg" alt="" class="search-img" onclick="searchPerson()">
+                <input type="text" name="search" id="search" placeholder="Search">
+            </form>
+
+            <section class="dropdown-order">
+                <label for="homeworld">Sort by</label>
+                <select name="homeworld" id="homeworld" onChange="getHomeworld(this)">
+                    <option value="all">All</option>
+                </select>
+                <section class="ordering">
+                    <h3 id="asc" onclick="sortAsc()">ASC</h3>
+                    <h3 id="desc" onclick="sortDesc()">DESC</h3>
+                </section>
+            </section>
+        </section>
+
+        <section id="main-content">
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
