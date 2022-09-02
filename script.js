@@ -1,8 +1,8 @@
 const homeworlds = []
-var idx = 1
+let idx = 1
 //Retrieves the persons from the API
 async function getPeople(){
-    for (var i = 1; i <= 82; i++){
+    for (let i = 1; i <= 82; i++){
         if (i == 17){
             continue
         }
@@ -23,7 +23,7 @@ async function setPeople(name, birth_year, gender, homeworld, species, starships
     newTop.classList.add('top')
 
     const topImg = document.createElement('img')
-    topImg.src = "Interview Assets/Card_white.svg"
+    topImg.src = "Card_white.svg"
     newTop.appendChild(topImg)
 
     const topHeading = document.createElement('h2')
@@ -42,9 +42,9 @@ async function setPeople(name, birth_year, gender, homeworld, species, starships
 
     const genderImg = document.createElement('img')
     if (gender == 'female'){
-        genderImg.src = "Interview Assets/Gender-Female.svg"
+        genderImg.src = "Gender-Female.svg"
     }else{
-        genderImg.src = "Interview Assets/Gender-Male.svg"
+        genderImg.src = "Gender-Male.svg"
     }
     newSpecies.appendChild(genderImg)
 
@@ -70,7 +70,7 @@ async function setPeople(name, birth_year, gender, homeworld, species, starships
     newHomeworld.classList.add('homeworld')
 
     const homeworldImg = document.createElement('img')
-    homeworldImg.src = "Interview Assets/Homeworld.svg"
+    homeworldImg.src = "Homeworld.svg"
     newHomeworld.appendChild(homeworldImg)
 
     const newHomeworldLabel = document.createElement('p')
@@ -97,7 +97,7 @@ async function setPeople(name, birth_year, gender, homeworld, species, starships
     newVehicles.classList.add('vehicles')
 
     const vehicleImg = document.createElement('img')
-    vehicleImg.src = "Interview Assets/Vehicle.svg"
+    vehicleImg.src = "Vehicle.svg"
     newVehicles.appendChild(vehicleImg)
 
     const newVehiclesLabel = document.createElement('p')
@@ -143,7 +143,7 @@ async function setPeople(name, birth_year, gender, homeworld, species, starships
                 newVehicle.classList.add('vehicles')
 
                 const vehiclesImg = document.createElement('img')
-                vehiclesImg.src = "Interview Assets/Vehicle.svg"
+                vehiclesImg.src = "Vehicle.svg"
                 newVehicle.appendChild(vehiclesImg)
 
                 const newVehicleLabel = document.createElement('p')
@@ -168,7 +168,7 @@ async function setPeople(name, birth_year, gender, homeworld, species, starships
     newStarships.classList.add('starships')
 
     const starshipImg = document.createElement('img')
-    starshipImg.src = "Interview Assets/Starship.svg"
+    starshipImg.src = "Starship.svg"
     newStarships.appendChild(starshipImg)
 
     const newStarshipsLabel = document.createElement('p')
@@ -214,7 +214,7 @@ async function setPeople(name, birth_year, gender, homeworld, species, starships
                 newStarship.classList.add('starships')
 
                 const starshipsImg = document.createElement('img')
-                starshipsImg.src = "Interview Assets/Starship.svg"
+                starshipsImg.src = "Starship.svg"
                 newStarship.appendChild(starshipsImg)
 
                 const newStarshipLabel = document.createElement('p')
@@ -247,12 +247,12 @@ async function setPeople(name, birth_year, gender, homeworld, species, starships
 function displayHomeworlds(){
     if(homeworlds.length > 0){
         if(homeworlds.includes('unknown')){
-            var index = homeworlds.indexOf('unknown')
+            let index = homeworlds.indexOf('unknown')
             homeworlds.splice(index, 1)
         }
         const selectElement = document.getElementById('homeworld')
-        for (var i = 0; i < homeworlds.length; i++){
-            var option = new Option(homeworlds[i], homeworlds[i] + (i+1).toString())
+        for (let i = 0; i < homeworlds.length; i++){
+            let option = new Option(homeworlds[i], homeworlds[i] + (i+1).toString())
             selectElement.appendChild(option)
         }
     }
@@ -278,7 +278,7 @@ function getHomeworld(e){
 function searchPerson(){
     const search = document.getElementById('search').value
     const person = search.charAt(0).toUpperCase() + search.slice(1)
-    var names = document.querySelectorAll('h2.character').forEach(name =>{
+    let names = document.querySelectorAll('h2.character').forEach(name =>{
         if (name.innerText.includes(person)){
             name.closest('.card').scrollIntoView()
         }
